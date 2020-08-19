@@ -1,0 +1,42 @@
+{
+    "name": "sfneal/php-package-boilerplate",
+    "description": "Boilerplate for PHP package repo's",
+    "keywords": [
+        "sfneal",
+        "php-package-boilerplate"
+    ],
+    "homepage": "https://github.com/sfneal/php-package-boilerplate",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Stephen Neal",
+            "email": "stephen.neal14@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sfneal\\PhpPackageBoilerplate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sfneal\\PhpPackageBoilerplate\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
