@@ -1,11 +1,11 @@
 {
-    "name": "sfneal/php-package-boilerplate",
-    "description": "Boilerplate for PHP package repo's",
+    "name": "sfneal/string-helpers",
+    "description": "PHP string helper functions that add familiar functionality from other languages (like string contains, splitting, truncating, etc...)",
     "keywords": [
         "sfneal",
-        "php-package-boilerplate"
+        "string-helpers"
     ],
-    "homepage": "https://github.com/sfneal/php-package-boilerplate",
+    "homepage": "https://github.com/sfneal/string-helpers",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -23,12 +23,15 @@
     },
     "autoload": {
         "psr-4": {
-            "Sfneal\\PhpPackageBoilerplate\\": "src"
-        }
+            "Sfneal\\Helpers\\Strings\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Sfneal\\PhpPackageBoilerplate\\Tests\\": "tests"
+            "Sfneal\\Helpers\\Strings\\Tests\\": "tests"
         }
     },
     "scripts": {

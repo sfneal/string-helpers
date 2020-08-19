@@ -1,18 +1,18 @@
-# Very short description of the package
+# String Helpers
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/php-package-boilerplate.svg?style=flat-square)](https://packagist.org/packages/sfneal/php-package-boilerplate)
-[![Build Status](https://img.shields.io/travis/sfneal/php-package-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/sfneal/php-package-boilerplate)
-[![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/php-package-boilerplate.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/php-package-boilerplate)
-[![Total Downloads](https://img.shields.io/packagist/dt/sfneal/php-package-boilerplate.svg?style=flat-square)](https://packagist.org/packages/sfneal/php-package-boilerplate)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
+[![Build Status](https://img.shields.io/travis/sfneal/string-helpers/master.svg?style=flat-square)](https://travis-ci.org/sfneal/string-helpers)
+[![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/string-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/string-helpers)
+[![Total Downloads](https://img.shields.io/packagist/dt/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+PHP string helper functions that add familiar functionality from other languages (like string contains, splitting, truncating, etc...)
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require sfneal/php-package-boilerplate
+composer require sfneal/string-helpers
 ```
 
 ## Usage
