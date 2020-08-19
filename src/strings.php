@@ -1,51 +1,51 @@
 <?php
 
-
 /**
- * Sanitize a file name to remove illegal chars
+ * Sanitize a file name to remove illegal chars.
  *
  * @param string $raw
  * @return string
  */
-function sanitizeFileName(string $raw): string {
+function sanitizeFileName(string $raw): string
+{
     return preg_replace('/[^A-Za-z0-9_\-]/', '_', $raw);
 }
 
-
 /**
- * Truncate a string to be no longer than $chars
+ * Truncate a string to be no longer than $chars.
  *
  * @param string $string
  * @param int $chars
  * @param string $suffix
  * @return string
  */
-function truncateString(string $string, int $chars = 100, string $suffix = '...'): string {
-    return (strlen($string) <= $chars) ? $string : substr($string, 0, $chars) . $suffix;
+function truncateString(string $string, int $chars = 100, string $suffix = '...'): string
+{
+    return (strlen($string) <= $chars) ? $string : substr($string, 0, $chars).$suffix;
 }
 
-
 /**
- * Covert a camel cased string into a $char separated string
+ * Covert a camel cased string into a $char separated string.
  *
  * @param string $string
  * @param string $char
  * @return string
  */
-function camelCaseConverter(string $string, $char='-'): string {
+function camelCaseConverter(string $string, $char = '-'): string
+{
     return strtolower(preg_replace('/(?<!^)[A-Z]/', $char.'$0', $string));
 }
 
-
 /**
- * Implode values that are not null
+ * Implode values that are not null.
  *
  * @param $glue
  * @param array $pieces
  * @return string|null
  */
-function implodeFiltered($glue, array $pieces) {
-    if (!empty($pieces) && count($pieces) > 0) {
+function implodeFiltered($glue, array $pieces)
+{
+    if (! empty($pieces) && count($pieces) > 0) {
         return implode($glue, array_filter($pieces, function ($attr) {
             return isset($attr);
         }));
@@ -55,18 +55,18 @@ function implodeFiltered($glue, array $pieces) {
 }
 
 /**
- * Retrieve a website domain without prefixes
+ * Retrieve a website domain without prefixes.
  *
  * @param string $url
  * @return string
  */
-function extractWebsiteDomain(string $url) {
+function extractWebsiteDomain(string $url)
+{
     return isset($url) ? str_replace('www.', '', parse_url($url)['host']) : '';
 }
 
-
 /**
- * Only retrieve an integer value if the $value is greater than zero
+ * Only retrieve an integer value if the $value is greater than zero.
  *
  * Uses $return as the $return value instead of $value if not null.
  * Return original $value or $return if it is greater than zero.
@@ -77,59 +77,59 @@ function extractWebsiteDomain(string $url) {
  * @param mixed $return
  * @return mixed|string
  */
-function zero_replace($value, $substitute = '-', $return = null) {
+function zero_replace($value, $substitute = '-', $return = null)
+{
     // Return $substitute if the $value is not greater than the 0
-    return ($value > 0 ? ($return ?? (int) $value) : $substitute);
+    return $value > 0 ? ($return ?? (int) $value) : $substitute;
 }
 
-
 /**
- * Remove illegal characters from a string to create an ID
+ * Remove illegal characters from a string to create an ID.
  *
  * @param $string
  * @return string
  */
-function str2id($string) {
+function str2id($string)
+{
     return strtolower(str_replace(' ', '-', str_replace('&', '-', $string)));
 }
 
-
 /**
- * Remove ' ', '-', '&' characters
+ * Remove ' ', '-', '&' characters.
  *
  * @param $item
  * @return string
  */
-function stripString($item) {
+function stripString($item)
+{
     return strtolower(str_replace(',', '', str_replace(' ', '-', str_replace('&', '', $item))));
 }
 
-
 /**
- * Remove spaces and convert string to lowercase chars
+ * Remove spaces and convert string to lowercase chars.
  *
  * @param $string
  * @return string|string[]
  */
-function stringID($string) {
+function stringID($string)
+{
     return str_replace(' ', '-', strtolower($string));
 }
 
-
 /**
- * Check if a needle string is in a haystack string
+ * Check if a needle string is in a haystack string.
  *
  * @param string $haystack
  * @param string $needle
  * @return bool
  */
-function inString(string $haystack, string $needle): bool {
+function inString(string $haystack, string $needle): bool
+{
     return strpos($haystack, $needle) !== false;
 }
 
-
 /**
- * Determine if the $string is a plain text list of values
+ * Determine if the $string is a plain text list of values.
  *
  *  - if $string is a list, an array of values is returned
  *  - if $sting is a string, false is returned
@@ -154,9 +154,8 @@ function isListString(string $string, array $separators = [', ', ' '])
     return false;
 }
 
-
 /**
- * Explode a string using an array of delimiters instead of a single string
+ * Explode a string using an array of delimiters instead of a single string.
  *
  * @param string $string
  * @param array|string[] $delimiters
@@ -210,9 +209,8 @@ function explodeMany(string $string,
     }
 }
 
-
 /**
- * Pretty implode an array by using a different glue for the last piece
+ * Pretty implode an array by using a different glue for the last piece.
  *
  * Examples:
  *  - implodePretty([1, 2, 3]) --> '1, 2 & 3'
@@ -231,7 +229,7 @@ function implodePretty(array $pieces, string $glue = ',', string $and = '&')
 
     // Do nothing and return $last if there
     // are no remaining $pieces
-    if (!count($pieces)) {
+    if (! count($pieces)) {
         return $last;
     }
 
@@ -244,9 +242,8 @@ function implodePretty(array $pieces, string $glue = ',', string $and = '&')
     return implode(whitespacePad(trim($and)), [$start, $last]);
 }
 
-
 /**
- * Add whitespace padding to a string
+ * Add whitespace padding to a string.
  *
  * @param string $string
  * @param int $amount
@@ -265,12 +262,11 @@ function whitespacePad(string $string,
     $whitespace = str_repeat($pad, $amount);
 
     // Return string with padding
-    return ($front ? $whitespace : '') . $string . ($back ? $whitespace : '');
+    return ($front ? $whitespace : '').$string.($back ? $whitespace : '');
 }
 
-
 /**
- * Add whitespace padding to only the 'back' of the string
+ * Add whitespace padding to only the 'back' of the string.
  *
  * @param string $string
  * @param int $amount
@@ -282,9 +278,8 @@ function whitespacePadBack(string $string, int $amount = 1, string $pad = ' ')
     return whitespacePad($string, $amount, $pad, false, true);
 }
 
-
 /**
- * Add whitespace padding to only the 'back' of the string
+ * Add whitespace padding to only the 'back' of the string.
  *
  * @param string $string
  * @param int $amount
