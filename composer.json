@@ -26,7 +26,7 @@
             "Sfneal\\Helpers\\Strings\\": "src"
         },
         "files": [
-            "src/helpers.php"
+            "src/strings.php"
         ]
     },
     "autoload-dev": {
