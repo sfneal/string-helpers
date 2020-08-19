@@ -148,7 +148,7 @@ function isListString(string $string, array $separators = [', ', ' '])
             return explode($needle, $string);
         }
     }
-    
+
     // If none of the separators are found
     // we know the string is not a list
     return false;
@@ -171,27 +171,43 @@ function explodeMany(string $string,
     // $replacer so that a single delimiter can
     // be used to explode the string
     $cleaned = str_replace($delimiters, $replacer, $string);
-    
+
     // Use the replacer as the $delimiter
     // since it has replaced each of the
     // passed $delimiters
     $split = explode($replacer, $cleaned);
-    
-    // Collect the array of strings
-    return collect($split)
-        
+
+    // Utilize collection's if laravel/framework is installed
+    if (function_exists('collect')) {
+        // Collect the array of strings
+        return collect($split)
+
+            // Remove empty strings from the collection
+            ->filter(function (string $item) {
+                return strlen($item) > 0;
+            })
+
+            // Trim the remaining strings in the collection
+            ->map(function (string $item) {
+                return trim($item);
+            })
+
+            // Encode as array
+            ->toArray();
+    }
+
+    // Use built in array functions
+    else {
         // Remove empty strings from the collection
-        ->filter(function (string $item) {
+        $filtered = array_filter($split, function (string $item) {
             return strlen($item) > 0;
-        })
-        
+        });
+
         // Trim the remaining strings in the collection
-        ->map(function (string $item) {
+        return  array_map(function (string $item) {
             return trim($item);
-        })
-        
-        // Encode as array
-        ->toArray();
+        }, $filtered);
+    }
 }
 
 
@@ -212,17 +228,17 @@ function implodePretty(array $pieces, string $glue = ',', string $and = '&')
     // Pop off the last item so that it's
     // imploded with the $and char
     $last = array_pop($pieces);
-    
+
     // Do nothing and return $last if there
     // are no remaining $pieces
     if (!count($pieces)) {
         return $last;
     }
-    
+
     // Implode all bust the last $piece
     // using the $glue char
     $start = implode(whitespacePadBack(trim($glue)), $pieces);
-    
+
     // Implode comma separated $start with
     // & separated $last
     return implode(whitespacePad(trim($and)), [$start, $last]);
@@ -247,7 +263,7 @@ function whitespacePad(string $string,
 {
     // Multiple $pad chars by $amount
     $whitespace = str_repeat($pad, $amount);
-    
+
     // Return string with padding
     return ($front ? $whitespace : '') . $string . ($back ? $whitespace : '');
 }
