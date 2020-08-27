@@ -291,9 +291,8 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' ')
     return whitespacePad($string, $amount, $pad, true, false);
 }
 
-
 /**
- * Generate a random password using uniqueid & md5 functions
+ * Generate a random password using uniqueid & md5 functions.
  *
  * @param int $length
  * @param string $prefix
@@ -302,5 +301,5 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' ')
  */
 function random_password(int $length = 8, string $prefix = '', string $hashFunction = 'md5'): string
 {
-    return $prefix . truncateString($hashFunction(uniqid()), $length, '');
+    return $prefix.truncateString($hashFunction(uniqid()), $length, '');
 }
