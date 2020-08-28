@@ -299,7 +299,7 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' ')
  * @param string $hashFunction
  * @return string
  */
-function random_password(int $length = 8, string $prefix = '', string $hashFunction = 'md5'): string
+function randomPassword(int $length = 8, string $prefix = '', string $hashFunction = 'md5'): string
 {
     return $prefix.truncateString($hashFunction(uniqid()), $length, '');
 }
