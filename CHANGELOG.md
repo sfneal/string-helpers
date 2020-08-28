@@ -12,3 +12,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 0.1.2 - 2020-08-28
 - refactor random_password() to randomPassword()
+
+
+## 0.1.3 - 2020-08-28
+- make StringHelpers class
