@@ -16,3 +16,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 0.1.3 - 2020-08-28
 - make StringHelpers class
+
+
+## 0.1.4 - 2020-08-28
+- add missing type hinting
