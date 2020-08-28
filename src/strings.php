@@ -13,7 +13,6 @@ function sanitizeFileName(string $raw): string
     return (new StringHelpers($raw))->sanitizeFileName();
 }
 
-
 /**
  * Truncate a string to be no longer than $chars.
  *
@@ -27,7 +26,6 @@ function truncateString(string $string, int $chars = 100, string $suffix = '...'
     return (new StringHelpers($string))->truncate($chars, $suffix);
 }
 
-
 /**
  * Covert a camel cased string into a $char separated string.
  *
@@ -39,7 +37,6 @@ function camelCaseConverter(string $string, $char = '-'): string
 {
     return (new StringHelpers($string))->camelCaseConvert($char);
 }
-
 
 /**
  * Remove illegal characters from a string to create an ID.
@@ -161,7 +158,6 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' '):
     return (new StringHelpers($string))->whitespacePadFront($amount, $pad);
 }
 
-
 /**
  * Implode values that are not null.
  *
@@ -180,7 +176,6 @@ function implodeFiltered($glue, array $pieces)
     }
 }
 
-
 /**
  * Retrieve a website domain without prefixes.
  *
@@ -191,7 +186,6 @@ function extractWebsiteDomain(string $url)
 {
     return isset($url) ? str_replace('www.', '', parse_url($url)['host']) : '';
 }
-
 
 /**
  * Only retrieve an integer value if the $value is greater than zero.
@@ -210,7 +204,6 @@ function zero_replace($value, $substitute = '-', $return = null)
     // Return $substitute if the $value is not greater than the 0
     return $value > 0 ? ($return ?? (int) $value) : $substitute;
 }
-
 
 /**
  * Pretty implode an array by using a different glue for the last piece.
