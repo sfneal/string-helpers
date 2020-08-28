@@ -71,7 +71,7 @@ class StringHelpers
      *
      * @return string
      */
-    public function strip()
+    public function strip(): string
     {
         return strtolower(
             str_replace(
@@ -186,7 +186,7 @@ class StringHelpers
     public function whitespacePad(int $amount = 1,
                                   string $pad = ' ',
                                   bool $front = true,
-                                  bool $back = true)
+                                  bool $back = true): string
     {
         // Multiple $pad chars by $amount
         $whitespace = str_repeat($pad, $amount);
@@ -202,7 +202,7 @@ class StringHelpers
      * @param string $pad
      * @return string
      */
-    public function whitespacePadBack(int $amount = 1, string $pad = ' ')
+    public function whitespacePadBack(int $amount = 1, string $pad = ' '): string
     {
         return $this->whitespacePad($amount, $pad, false, true);
     }
@@ -214,7 +214,7 @@ class StringHelpers
      * @param string $pad
      * @return string
      */
-    function whitespacePadFront(int $amount = 1, string $pad = ' ')
+    function whitespacePadFront(int $amount = 1, string $pad = ' '): string
     {
         return $this->whitespacePad($amount, $pad, true, false);
     }

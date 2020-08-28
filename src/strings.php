@@ -47,7 +47,7 @@ function camelCaseConverter(string $string, $char = '-'): string
  * @param $string
  * @return string
  */
-function str2id($string)
+function str2id($string): string
 {
     return (new StringHelpers($string))->id();
 }
@@ -58,7 +58,7 @@ function str2id($string)
  * @param $item
  * @return string
  */
-function stripString($item)
+function stripString($item): string
 {
     return (new StringHelpers($item))->strip();
 }
@@ -69,7 +69,7 @@ function stripString($item)
  * @param $string
  * @return string|string[]
  */
-function stringID($string)
+function stringID($string): string
 {
     return (new StringHelpers($string))->id();
 }
@@ -130,7 +130,7 @@ function whitespacePad(string $string,
                        int $amount = 1,
                        string $pad = ' ',
                        bool $front = true,
-                       bool $back = true)
+                       bool $back = true): string
 {
     return (new StringHelpers($string))->whitespacePad($amount, $pad, $front, $back);
 }
@@ -143,7 +143,7 @@ function whitespacePad(string $string,
  * @param string $pad
  * @return string
  */
-function whitespacePadBack(string $string, int $amount = 1, string $pad = ' ')
+function whitespacePadBack(string $string, int $amount = 1, string $pad = ' '): string
 {
     return (new StringHelpers($string))->whitespacePadBack($amount, $pad);
 }
@@ -156,7 +156,7 @@ function whitespacePadBack(string $string, int $amount = 1, string $pad = ' ')
  * @param string $pad
  * @return string
  */
-function whitespacePadFront(string $string, int $amount = 1, string $pad = ' ')
+function whitespacePadFront(string $string, int $amount = 1, string $pad = ' '): string
 {
     return (new StringHelpers($string))->whitespacePadFront($amount, $pad);
 }
