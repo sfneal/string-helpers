@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Strings;
-
 
 class StringHelpers
 {
@@ -40,7 +38,7 @@ class StringHelpers
      */
     public function truncate(int $chars = 100, string $suffix = '...'): string
     {
-        return (strlen($this->string) <= $chars) ? $this->string : substr($this->string, 0, $chars) . $suffix;
+        return (strlen($this->string) <= $chars) ? $this->string : substr($this->string, 0, $chars).$suffix;
     }
 
     /**
@@ -192,7 +190,7 @@ class StringHelpers
         $whitespace = str_repeat($pad, $amount);
 
         // Return string with padding
-        return ($front ? $whitespace : '') . $this->string . ($back ? $whitespace : '');
+        return ($front ? $whitespace : '').$this->string.($back ? $whitespace : '');
     }
 
     /**
@@ -214,7 +212,7 @@ class StringHelpers
      * @param string $pad
      * @return string
      */
-    function whitespacePadFront(int $amount = 1, string $pad = ' ')
+    public function whitespacePadFront(int $amount = 1, string $pad = ' ')
     {
         return $this->whitespacePad($amount, $pad, true, false);
     }
