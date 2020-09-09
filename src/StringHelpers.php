@@ -98,7 +98,7 @@ class StringHelpers
 
             // Check if each of the needles is found in the haystack
             $results = [];
-            foreach($needle as $need) {
+            foreach ($needle as $need) {
                 $results[] = $this->isNeedleInString($need);
             }
 
@@ -112,11 +112,12 @@ class StringHelpers
                 return arrayValuesEqual($results, true);
             }
         }
+
         return $this->isNeedleInString($needle);
     }
 
     /**
-     * Check if a needle exists inside a haystack
+     * Check if a needle exists inside a haystack.
      *
      * @param $needle
      * @return bool
