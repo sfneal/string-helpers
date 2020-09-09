@@ -87,10 +87,41 @@ class StringHelpers
     /**
      * Check if a needle string is in a haystack string.
      *
-     * @param string $needle
+     * @param string|array $needle
+     * @param string $boolean
      * @return bool
      */
-    public function inString(string $needle): bool
+    public function inString($needle, string $boolean = 'and'): bool
+    {
+        // Determine if an array of $needle's was passed
+        if (is_array($needle)) {
+
+            // Check if each of the needles is found in the haystack
+            $results = [];
+            foreach($needle as $need) {
+                $results[] = $this->isNeedleInString($need);
+            }
+
+            // Determine if any of the needles can exist to return true
+            if ($boolean == 'or') {
+                return in_array(true, $results);
+            }
+
+            // All needles must be found
+            else {
+                return arrayValuesEqual($results, true);
+            }
+        }
+        return $this->isNeedleInString($needle);
+    }
+
+    /**
+     * Check if a needle exists inside a haystack
+     *
+     * @param $needle
+     * @return bool
+     */
+    private function isNeedleInString($needle): bool
     {
         return strpos($this->string, $needle) !== false;
     }

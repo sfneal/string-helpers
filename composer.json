@@ -16,7 +16,8 @@
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "sfneal/array-helpers": "~0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0"

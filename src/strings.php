@@ -75,12 +75,13 @@ function stringID($string): string
  * Check if a needle string is in a haystack string.
  *
  * @param string $haystack
- * @param string $needle
+ * @param string|array $needle
+ * @param string $boolean
  * @return bool
  */
-function inString(string $haystack, string $needle): bool
+function inString(string $haystack, $needle, string $boolean = 'and'): bool
 {
-    return (new StringHelpers($haystack))->inString($needle);
+    return (new StringHelpers($haystack))->inString($needle, $boolean);
 }
 
 /**
