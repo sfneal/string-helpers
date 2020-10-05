@@ -142,6 +142,8 @@ class StringHelpers
      *  - if $string is a list, an array of values is returned
      *  - if $sting is a string, false is returned
      *
+     *  todo: refactor to listString?
+     *
      * @param array|string[] $separators
      * @return bool|false|string[]
      */
@@ -152,6 +154,7 @@ class StringHelpers
             // we know the string is a plain text list
             // so an array of values is returned
             if ($this->inString($needle)) {
+                // todo: use explode many?
                 return explode($needle, $this->string);
             }
         }

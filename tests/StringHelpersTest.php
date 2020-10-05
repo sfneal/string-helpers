@@ -69,4 +69,13 @@ class StringHelpersTest extends TestCase
         $inArray = (new StringHelpers('haystack with a needle'))->inString(['john', 'needle'], 'or');
         $this->assertTrue($inArray);
     }
+
+    /** @test */
+    public function isListString()
+    {
+        $listString = (new StringHelpers('tom, dick, harry'))->isListString();
+
+        $this->assertIsArray($listString);
+        $this->assertTrue(count($listString) == 3);
+    }
 }
