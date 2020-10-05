@@ -8,7 +8,7 @@ use Sfneal\Helpers\Strings\StringHelpers;
 class StringHelpersTest extends TestCase
 {
     /** @test */
-    public function sanitize_filename()
+    public function sanitizeFileName()
     {
         $string = (new StringHelpers('random.string.name'))->sanitizeFileName();
 
@@ -25,7 +25,7 @@ class StringHelpersTest extends TestCase
     }
 
     /** @test */
-    public function camelCase()
+    public function camelCaseConvert()
     {
         $string = (new StringHelpers('camelCaseString'))->camelCaseConvert();
 

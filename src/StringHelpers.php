@@ -55,6 +55,8 @@ class StringHelpers
     /**
      * Remove illegal characters from a string to create an ID.
      *
+     *  - legal chars: '&', ' '
+     *
      * @return string
      */
     public function id(): string
