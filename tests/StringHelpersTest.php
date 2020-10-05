@@ -78,4 +78,13 @@ class StringHelpersTest extends TestCase
         $this->assertIsArray($listString);
         $this->assertTrue(count($listString) == 3);
     }
+
+    /** @test */
+    public function explodeMany()
+    {
+        $listString = (new StringHelpers('tom, dick & harry'))->explodeMany();
+
+        $this->assertIsArray($listString);
+        $this->assertTrue(count($listString) == 3);
+    }
 }
