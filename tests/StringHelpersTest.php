@@ -84,7 +84,7 @@ class StringHelpersTest extends TestCase
     {
         $listString = (new StringHelpers('tom, dick & harry'))->explodeMany();
 
-        $this->assertIsArray($listString);
+        $this->assertTrue(is_array($listString));
         $this->assertTrue(count($listString) == 3);
     }
 
