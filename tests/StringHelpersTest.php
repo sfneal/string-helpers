@@ -49,4 +49,12 @@ class StringHelpersTest extends TestCase
         $this->assertTrue(!inString($string, '&'));
         $this->assertTrue(!inString($string, ' '));
     }
+
+    /** @test */
+    public function inString()
+    {
+        $inString = (new StringHelpers('haystack with a needle'))->inString('needle');
+
+        $this->assertTrue($inString);
+    }
 }
