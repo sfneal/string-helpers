@@ -31,4 +31,13 @@ class StringHelpersTest extends TestCase
 
         $this->assertTrue(inString($string, '-'));
     }
+
+    /** @test */
+    public function id()
+    {
+        $string = (new StringHelpers('illegal id & string'))->id();
+
+        $this->assertTrue(!inString($string, '&'));
+        $this->assertTrue(!inString($string, ' '));
+    }
 }
