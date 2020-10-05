@@ -12,7 +12,7 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers('random.string.name'))->sanitizeFileName();
 
-        $this->assertTrue(!inString($string, '.'));
+        $this->assertTrue(! inString($string, '.'));
         $this->assertTrue(inString($string, '_'));
     }
 
