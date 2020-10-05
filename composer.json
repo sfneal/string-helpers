@@ -20,7 +20,7 @@
         "sfneal/array-helpers": "~0"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "^7.0"
     },
     "autoload": {
         "psr-4": {
