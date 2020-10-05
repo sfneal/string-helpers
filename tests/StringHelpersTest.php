@@ -75,7 +75,7 @@ class StringHelpersTest extends TestCase
     {
         $listString = (new StringHelpers('tom, dick, harry'))->isListString();
 
-        $this->assertIsArray($listString);
+        $this->assertTrue(is_array($listString));
         $this->assertTrue(count($listString) == 3);
     }
 
