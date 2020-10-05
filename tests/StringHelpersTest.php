@@ -87,4 +87,20 @@ class StringHelpersTest extends TestCase
         $this->assertIsArray($listString);
         $this->assertTrue(count($listString) == 3);
     }
+
+    /** @test */
+    public function whitespacePad()
+    {
+        // String to add padding to
+        $string = 'padded string';
+
+        // Amount of padding chars to add to string
+        $amount = 10;
+
+        // Add padding
+        $paddedString = (new StringHelpers($string))->whitespacePad($amount);
+
+        // Confirm string has been padded
+        $this->assertTrue(strlen($string) + $amount * 2 == strlen($paddedString));
+    }
 }
