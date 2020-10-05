@@ -103,4 +103,36 @@ class StringHelpersTest extends TestCase
         // Confirm string has been padded
         $this->assertTrue(strlen($string) + $amount * 2 == strlen($paddedString));
     }
+
+    /** @test */
+    public function whitespacePadBack()
+    {
+        // String to add padding to
+        $string = 'padded string';
+
+        // Amount of padding chars to add to string
+        $amount = 10;
+
+        // Add padding
+        $paddedString = (new StringHelpers($string))->whitespacePadBack($amount);
+
+        // Confirm string has been padded
+        $this->assertTrue(strlen($string) + $amount == strlen($paddedString));
+    }
+
+    /** @test */
+    public function whitespacePadFront()
+    {
+        // String to add padding to
+        $string = 'padded string';
+
+        // Amount of padding chars to add to string
+        $amount = 10;
+
+        // Add padding
+        $paddedString = (new StringHelpers($string))->whitespacePadFront($amount);
+
+        // Confirm string has been padded
+        $this->assertTrue(strlen($string) + $amount == strlen($paddedString));
+    }
 }
