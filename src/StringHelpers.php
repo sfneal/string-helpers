@@ -61,6 +61,7 @@ class StringHelpers
      */
     public function id(): string
     {
+        // todo: improve this by removing repeated '-'
         return strtolower(
             str_replace(' ', '-', str_replace('&', '-', $this->string))
         );
@@ -73,6 +74,7 @@ class StringHelpers
      */
     public function strip(): string
     {
+        // todo: maybe replace with id & make depreciated?
         return strtolower(
             str_replace(
                 ',', '', str_replace(
