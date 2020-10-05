@@ -178,6 +178,21 @@ function implodeFiltered($glue, array $pieces)
 }
 
 /**
+ * Concatenate directory and file path arrays.
+ *
+ * @param mixed ...$paths
+ * @return string
+ */
+function joinPaths(...$paths)
+{
+    if (count($paths) === count($paths, COUNT_RECURSIVE)) {
+        $paths = array_values($paths);
+    }
+
+    return implode(DIRECTORY_SEPARATOR, $paths);
+}
+
+/**
  * Retrieve a website domain without prefixes.
  *
  * @param string $url

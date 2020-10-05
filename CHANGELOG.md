@@ -24,3 +24,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 0.1.5 - 2020-09-09
 - fix inString() helper function to allow for arrays of needles
+
+
+## 0.1.6 - 2020-10-05
+- add joinPaths() helper function for concatenating arrays of paths
