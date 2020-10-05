@@ -91,7 +91,8 @@ class StringHelpers
     /**
      * Check if a needle string is in a haystack string.
      *
-     *  - $boolean param determines weather ALL or ANY of $needles need to be found to return true (only when $needle is an array)
+     *  $boolean param determines weather ALL or ANY of $needles
+     *  need to be found to return true (only when $needle is an array).
      *
      *  todo: rename given $needle can be an array
      *
