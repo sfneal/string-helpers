@@ -37,8 +37,8 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers('illegal id & string'))->id();
 
-        $this->assertTrue(!inString($string, '&'));
-        $this->assertTrue(!inString($string, ' '));
+        $this->assertTrue(! inString($string, '&'));
+        $this->assertTrue(! inString($string, ' '));
     }
 
     /** @test */
@@ -46,8 +46,8 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers('illegal-id & string'))->strip();
 
-        $this->assertTrue(!inString($string, '&'));
-        $this->assertTrue(!inString($string, ' '));
+        $this->assertTrue(! inString($string, '&'));
+        $this->assertTrue(! inString($string, ' '));
     }
 
     /** @test */
