@@ -28,3 +28,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 0.1.6 - 2020-10-05
 - add joinPaths() helper function for concatenating arrays of paths
+
+
+## 0.2.0 - 2020-10-05
+- add support for php 7.0 & 7.1
