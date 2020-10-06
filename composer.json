@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=7.0",
         "sfneal/array-helpers": ">=0.2.2"
     },
     "require-dev": {
