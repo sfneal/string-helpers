@@ -34,5 +34,5 @@ All notable changes to `string-helpers` will be documented in this file
 - add support for php 7.0 & 7.1
 
 
-## 0.2.1 - 2020-10-05
+## 0.2.1 - 2020-10-06
 - bump sfneal/array-helpers version requirement
