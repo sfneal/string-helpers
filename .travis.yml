@@ -4,6 +4,7 @@ env:
     matrix:
         - COMPOSER_FLAGS="" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
         - COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS=""
+        - COMPOSER_FLAGS="" COMPOSER_SELF_UPDATE_FLAGS="--preview"
 
 jobs:
     allow_failures:
