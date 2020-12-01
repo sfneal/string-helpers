@@ -41,5 +41,6 @@ All notable changes to `string-helpers` will be documented in this file
 ## 0.2.2 - 2020-10-05
 - fix issues with composer.json
 
+
 ## 0.2.3 - 2020-12-01
 - bump min php unit version
