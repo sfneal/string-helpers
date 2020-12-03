@@ -4,9 +4,10 @@ arch: arm64-graviton2
 
 env:
     matrix:
-        - COMPOSER_FLAGS="--prefer-stable" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
-        - COMPOSER_FLAGS="--prefer-stable" COMPOSER_SELF_UPDATE_FLAGS="--preview"
         - COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS=""
+        - COMPOSER_FLAGS="" COMPOSER_SELF_UPDATE_FLAGS=""
+#        - COMPOSER_FLAGS="--prefer-stable" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
+#        - COMPOSER_FLAGS="--prefer-stable" COMPOSER_SELF_UPDATE_FLAGS="--preview"
 
 jobs:
     allow_failures:
