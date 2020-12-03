@@ -27,6 +27,7 @@ php:
 
 before_script:
     - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    - phpenv config-rm xdebug.ini
     - travis_retry composer self-update ${COMPOSER_SELF_UPDATE_FLAGS}
     - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
 
