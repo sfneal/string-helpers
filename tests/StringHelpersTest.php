@@ -146,7 +146,7 @@ class StringHelpersTest extends TestCase
         $noWhitespace = (new StringHelpers($string))->whitespaceRemove();
 
         // Confirm whitespace is removed
-        $this->assertTrue(!inString($noWhitespace, ' '));
+        $this->assertTrue(! inString($noWhitespace, ' '));
 
         // Confirm string is as expected
         $this->assertTrue($noWhitespace == 'hereisastringwithwhitespace');
