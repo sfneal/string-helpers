@@ -260,4 +260,25 @@ class StringHelpers
     {
         return $this->whitespacePad($amount, $pad, true, false);
     }
+
+    /**
+     * Remove all whitespace (spaces) from a string
+     *
+     * @return string
+     */
+    public function whitespaceRemove(): string
+    {
+        return $this->whitespaceReplace();
+    }
+
+    /**
+     * Remove all whitespace (spaces) from a string & replace with another string
+     *
+     * @param string $replacement defaults to ''
+     * @return string
+     */
+    public function whitespaceReplace(string $replacement = ''): string
+    {
+        return str_replace(' ', $replacement, $this->string);
+    }
 }

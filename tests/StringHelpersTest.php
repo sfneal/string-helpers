@@ -135,4 +135,39 @@ class StringHelpersTest extends TestCase
         // Confirm string has been padded
         $this->assertTrue(strlen($string) + $amount == strlen($paddedString));
     }
+
+    /** @test  */
+    public function whitespaceRemove()
+    {
+        // String to remove whitespace from
+        $string = 'here is a string with whitespace';
+
+        // String without whitespace
+        $noWhitespace = (new StringHelpers($string))->whitespaceRemove();
+
+        // Confirm whitespace is removed
+        $this->assertTrue(!inString($noWhitespace, ' '));
+
+        // Confirm string is as expected
+        $this->assertTrue($noWhitespace == 'hereisastringwithwhitespace');
+    }
+
+    /** @test  */
+    public function whitespaceReplace()
+    {
+        // String to replace whitespace
+        $string = 'here is a string with whitespace';
+
+        // Replace spaces with '-'
+        $replacementChar = '-';
+
+        // String with whitespace replace
+        $noWhitespace = (new StringHelpers($string))->whitespaceReplace($replacementChar);
+
+        // Confirm whitespace is removed
+        $this->assertTrue(inString($noWhitespace, '-'));
+
+        // Confirm string is as expected
+        $this->assertTrue($noWhitespace == 'here-is-a-string-with-whitespace');
+    }
 }

@@ -160,6 +160,29 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' '):
 }
 
 /**
+ * Remove all whitespace (spaces) from a string
+ *
+ * @param string $string
+ * @return string
+ */
+function whitespaceRemove(string $string): string
+{
+    return (new StringHelpers($string))->whitespaceRemove();
+}
+
+/**
+ * Remove all whitespace (spaces) from a string & replace with another string
+ *
+ * @param string $string
+ * @param string $replacement defaults to ''
+ * @return string
+ */
+function whitespaceReplace(string $string, string $replacement = ''): string
+{
+    return (new StringHelpers($string))->whitespaceReplace($replacement);
+}
+
+/**
  * Implode values that are not null.
  *
  * @param $glue
