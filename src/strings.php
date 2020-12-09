@@ -160,7 +160,7 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' '):
 }
 
 /**
- * Remove all whitespace (spaces) from a string
+ * Remove all whitespace (spaces) from a string.
  *
  * @param string $string
  * @return string
@@ -171,7 +171,7 @@ function whitespaceRemove(string $string): string
 }
 
 /**
- * Remove all whitespace (spaces) from a string & replace with another string
+ * Remove all whitespace (spaces) from a string & replace with another string.
  *
  * @param string $string
  * @param string $replacement defaults to ''

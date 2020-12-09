@@ -262,7 +262,7 @@ class StringHelpers
     }
 
     /**
-     * Remove all whitespace (spaces) from a string
+     * Remove all whitespace (spaces) from a string.
      *
      * @return string
      */
@@ -272,7 +272,7 @@ class StringHelpers
     }
 
     /**
-     * Remove all whitespace (spaces) from a string & replace with another string
+     * Remove all whitespace (spaces) from a string & replace with another string.
      *
      * @param string $replacement defaults to ''
      * @return string
