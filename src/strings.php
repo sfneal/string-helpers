@@ -189,7 +189,7 @@ function whitespaceReplace(string $string, string $replacement = ''): string
  * @param array $pieces
  * @return string|null
  */
-function implodeFiltered($glue, array $pieces)
+function implodeFiltered($glue, array $pieces): ?string
 {
     if (! empty($pieces) && count($pieces) > 0) {
         return implode($glue, array_filter($pieces, function ($attr) {
@@ -206,7 +206,7 @@ function implodeFiltered($glue, array $pieces)
  * @param mixed ...$paths
  * @return string
  */
-function joinPaths(...$paths)
+function joinPaths(...$paths): string
 {
     if (count($paths) === count($paths, COUNT_RECURSIVE)) {
         $paths = array_values($paths);
@@ -221,7 +221,7 @@ function joinPaths(...$paths)
  * @param string $url
  * @return string
  */
-function extractWebsiteDomain(string $url)
+function extractWebsiteDomain(string $url): string
 {
     return isset($url) ? str_replace('www.', '', parse_url($url)['host']) : '';
 }
@@ -256,7 +256,7 @@ function zero_replace($value, $substitute = '-', $return = null)
  * @param string $and
  * @return string
  */
-function implodePretty(array $pieces, string $glue = ',', string $and = '&')
+function implodePretty(array $pieces, string $glue = ',', string $and = '&'): string
 {
     // Pop off the last item so that it's
     // imploded with the $and char
