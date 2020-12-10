@@ -48,3 +48,8 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 0.3.0 - 2020-12-09
 - add whitespaceRemove() & whitespaceReplace() helper functions with tests
+
+
+## 0.4.0 - 2020-12-10
+- cut support for php7.0
+- improved type hinting to helper functions
