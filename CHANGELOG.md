@@ -53,3 +53,7 @@ All notable changes to `string-helpers` will be documented in this file
 ## 0.4.0 - 2020-12-10
 - cut support for php7.0
 - improved type hinting to helper functions
+
+
+## 0.4.1 - 2020-12-14
+- fix issue with implodePretty() helper functions return type hinting

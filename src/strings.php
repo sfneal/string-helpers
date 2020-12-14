@@ -256,7 +256,7 @@ function zero_replace($value, $substitute = '-', $return = null)
  * @param string $and
  * @return string
  */
-function implodePretty(array $pieces, string $glue = ',', string $and = '&'): string
+function implodePretty(array $pieces, string $glue = ',', string $and = '&'): ?string
 {
     // Pop off the last item so that it's
     // imploded with the $and char
