@@ -1,7 +1,8 @@
 # String Helpers
 
+[![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/string-helpers)](https://packagist.org/packages/sfneal/string-helpers)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
-[![Build Status](https://img.shields.io/travis/sfneal/string-helpers/master.svg?style=flat-square)](https://travis-ci.org/sfneal/string-helpers)
+[![Build Status](https://travis-ci.com/sfneal/string-helpers.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/string-helpers)
 [![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/string-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/string-helpers)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
 
