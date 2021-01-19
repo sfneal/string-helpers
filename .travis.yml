@@ -1,9 +1,5 @@
 language: php
 
-os: linux
-
-arch: arm64-graviton2
-
 cache:
     directories:
         - $HOME/.composer/cache/files
