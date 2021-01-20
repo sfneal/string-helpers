@@ -2,6 +2,7 @@
 
 All notable changes to `string-helpers` will be documented in this file
 
+
 ## 0.1.0 - 2020-08-19
 - initial release
 
@@ -57,3 +58,9 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 0.4.1 - 2020-12-14
 - fix issue with implodePretty() helper functions return type hinting
+
+
+## 1.0.0 - 2020-01-20
+- initial production release
+- cut autoloading of helper functions by default 
+- update docs to explain autoloading & provide an example
