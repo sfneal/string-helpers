@@ -3,10 +3,9 @@
 [![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/string-helpers)](https://packagist.org/packages/sfneal/string-helpers)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
 [![Build Status](https://travis-ci.com/sfneal/string-helpers.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/string-helpers)
-[![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/string-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/string-helpers)
-[![Total Downloads](https://img.shields.io/packagist/dt/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sfneal/string-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sfneal/string-helpers/?branch=master)
 [![StyleCI](https://github.styleci.io/repos/288787695/shield?branch=master)](https://github.styleci.io/repos/288787695?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sfneal/string-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sfneal/string-helpers/?branch=master)
+[![Total Downloads](https://img.shields.io/packagist/dt/sfneal/string-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/string-helpers)
 
 PHP string helper functions that add familiar functionality from other languages (like string contains, splitting, truncating, etc...)
 
@@ -18,10 +17,30 @@ You can install the package via composer:
 composer require sfneal/string-helpers
 ```
 
+In order to autoload to the helper functions add the following path to the autoload.files section in your composer.json. 
+
+```json
+"autoload": {
+    "files": [
+        "vendor/sfneal/string-helpers/src/strings.php"
+    ]
+},
+```
+
 ## Usage
 
+Example use of the 'truncate' helper and method.
+
 ``` php
-// Usage description here
+# using StringHelpers import
+use Sfneal\Helpers\Strings\StringHelpers;
+(new StringHelpers("here is a long string we'd like to truncate"))->truncate(12);
+>>> here is a lo...
+
+
+# using autloaded helpers
+truncateString("here is a long string we'd like to truncate", 12);
+>>> here is a lo...
 ```
 
 ### Testing

@@ -25,15 +25,15 @@
     "autoload": {
         "psr-4": {
             "Sfneal\\Helpers\\Strings\\": "src"
-        },
-        "files": [
-            "src/strings.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
             "Sfneal\\Helpers\\Strings\\Tests\\": "tests"
-        }
+        },
+        "files": [
+            "src/strings.php"
+        ]
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
