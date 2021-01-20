@@ -27,5 +27,5 @@ build:
                     - command: php-scrutinizer-run
                     - command: 'composer test'
                       coverage:
-                          file: coverage.txt   # <- Set this to where we find the coverage data.
+                          file: ./build/coverage.txt   # <- Set this to where we find the coverage data.
                           format: clover
