@@ -60,7 +60,7 @@ All notable changes to `string-helpers` will be documented in this file
 - fix issue with implodePretty() helper functions return type hinting
 
 
-## 1.0.0 - 2020-01-20
+## 1.0.0 - 2021-01-20
 - initial production release
 - cut autoloading of helper functions by default 
 - update docs to explain autoloading & provide an example
