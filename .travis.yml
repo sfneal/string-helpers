@@ -33,4 +33,4 @@ script:
     - composer test
 
 after_script:
-    - php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
+    - php vendor/bin/ocular code-coverage:upload --format=php-clover phpunit.xml.dist
