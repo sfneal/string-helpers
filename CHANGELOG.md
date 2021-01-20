@@ -64,3 +64,4 @@ All notable changes to `string-helpers` will be documented in this file
 - initial production release
 - cut autoloading of helper functions by default 
 - update docs to explain autoloading & provide an example
+- optimize Travis CI test time by fixing issues with composer caching
