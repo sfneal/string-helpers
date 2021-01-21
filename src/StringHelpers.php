@@ -2,6 +2,8 @@
 
 namespace Sfneal\Helpers\Strings;
 
+use Sfneal\Helpers\Arrays\ArrayHelpers;
+
 class StringHelpers
 {
     /**
@@ -118,7 +120,7 @@ class StringHelpers
 
             // All needles must be found
             else {
-                return arrayValuesEqual($results, true);
+                return (new ArrayHelpers($results))->arrayValuesEqual(true);
             }
         }
 
