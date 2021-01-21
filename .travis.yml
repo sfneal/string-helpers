@@ -11,12 +11,10 @@ env:
 
 jobs:
     allow_failures:
-        -   php: hhvm
-        -   php: nightly
+        - php: nightly
 
 php:
     - nightly
-    - hhvm
     - 8.0
     - 7.4
     - 7.3
