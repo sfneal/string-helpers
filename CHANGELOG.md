@@ -65,3 +65,8 @@ All notable changes to `string-helpers` will be documented in this file
 - cut autoloading of helper functions by default 
 - update docs to explain autoloading & provide an example
 - optimize Travis CI test time by fixing issues with composer caching
+
+
+## 1.0.1 - 2021-01-21
+- fix use of ArrayHelpers
+- fix sfneal/array-helpers min version
