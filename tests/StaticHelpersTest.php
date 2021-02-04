@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Strings\Tests;
-
 
 use PHPUnit\Framework\TestCase;
 use Sfneal\Helpers\Strings\StringHelpers;
