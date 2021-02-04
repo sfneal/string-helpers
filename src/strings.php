@@ -191,13 +191,7 @@ function whitespaceReplace(string $string, string $replacement = ''): string
  */
 function implodeFiltered($glue, array $pieces): ?string
 {
-    if (! empty($pieces) && count($pieces) > 0) {
-        return implode($glue, array_filter($pieces, function ($attr) {
-            return isset($attr);
-        }));
-    } else {
-        return null;
-    }
+    return StringHelpers::implodeFiltered($glue, $pieces);
 }
 
 /**
@@ -208,11 +202,7 @@ function implodeFiltered($glue, array $pieces): ?string
  */
 function joinPaths(...$paths): string
 {
-    if (count($paths) === count($paths, COUNT_RECURSIVE)) {
-        $paths = array_values($paths);
-    }
-
-    return implode(DIRECTORY_SEPARATOR, $paths);
+    return StringHelpers::joinPaths(...$paths);
 }
 
 /**
@@ -223,7 +213,7 @@ function joinPaths(...$paths): string
  */
 function extractWebsiteDomain(string $url): string
 {
-    return isset($url) ? str_replace('www.', '', parse_url($url)['host']) : '';
+    return StringHelpers::extractWebsiteDomain($url);
 }
 
 /**
@@ -236,12 +226,11 @@ function extractWebsiteDomain(string $url): string
  * @param $value
  * @param string $substitute
  * @param mixed $return
- * @return mixed|string
+ * @return mixed
  */
 function zero_replace($value, $substitute = '-', $return = null)
 {
-    // Return $substitute if the $value is not greater than the 0
-    return $value > 0 ? ($return ?? (int) $value) : $substitute;
+    return StringHelpers::zero_replace($value, $substitute, $return);
 }
 
 /**
@@ -258,23 +247,7 @@ function zero_replace($value, $substitute = '-', $return = null)
  */
 function implodePretty(array $pieces, string $glue = ',', string $and = '&'): ?string
 {
-    // Pop off the last item so that it's
-    // imploded with the $and char
-    $last = array_pop($pieces);
-
-    // Do nothing and return $last if there
-    // are no remaining $pieces
-    if (! count($pieces)) {
-        return $last;
-    }
-
-    // Implode all bust the last $piece
-    // using the $glue char
-    $start = implode(whitespacePadBack(trim($glue)), $pieces);
-
-    // Implode comma separated $start with
-    // & separated $last
-    return implode(whitespacePad(trim($and)), [$start, $last]);
+    return StringHelpers::implodePretty($pieces, $glue, $and);
 }
 
 /**

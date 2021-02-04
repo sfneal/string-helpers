@@ -3,9 +3,12 @@
 namespace Sfneal\Helpers\Strings;
 
 use Sfneal\Helpers\Arrays\ArrayHelpers;
+use Sfneal\Helpers\Strings\Traits\StaticMethods;
 
 class StringHelpers
 {
+    use StaticMethods;
+
     /**
      * @var string
      */
