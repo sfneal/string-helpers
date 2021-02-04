@@ -68,5 +68,12 @@ All notable changes to `string-helpers` will be documented in this file
 
 
 ## 1.0.1 - 2021-01-21
-- fix use of ArrayHelpers
 - fix sfneal/array-helpers min version
+- fix use of ArrayHelpers
+
+
+## 1.1.0 - 2021-02-04
+- make StaticHelpersTest for testing helper methods not included in StringHelpers
+- add functionality to StaticMethods so that they can be accessed with StringHelpers
+- refactor StaticHelpersTest to use StringHelpers import
+- refactor zero_replace static method to zeroReplace
