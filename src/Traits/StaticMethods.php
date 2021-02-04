@@ -62,7 +62,7 @@ trait StaticMethods
      * @param mixed $return
      * @return mixed
      */
-    public static function zero_replace($value, $substitute = '-', $return = null)
+    public static function zeroReplace($value, $substitute = '-', $return = null)
     {
         // Return $substitute if the $value is not greater than the 0
         return $value > 0 ? ($return ?? (int) $value) : $substitute;

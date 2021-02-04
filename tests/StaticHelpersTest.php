@@ -45,11 +45,11 @@ class StaticHelpersTest extends TestCase
     /** @test */
     public function zero_replace()
     {
-        $this->assertEquals('-', StringHelpers::zero_replace(0));
-        $this->assertEquals(1021, StringHelpers::zero_replace(1021));
-        $this->assertEquals('*', StringHelpers::zero_replace(0, '*'));
-        $this->assertEquals(546, StringHelpers::zero_replace(546, '*'));
-        $this->assertEquals('blank', StringHelpers::zero_replace(546, '-', 'blank'));
+        $this->assertEquals('-', StringHelpers::zeroReplace(0));
+        $this->assertEquals(1021, StringHelpers::zeroReplace(1021));
+        $this->assertEquals('*', StringHelpers::zeroReplace(0, '*'));
+        $this->assertEquals(546, StringHelpers::zeroReplace(546, '*'));
+        $this->assertEquals('blank', StringHelpers::zeroReplace(546, '-', 'blank'));
     }
 
     /** @test */

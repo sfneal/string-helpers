@@ -230,7 +230,7 @@ function extractWebsiteDomain(string $url): string
  */
 function zero_replace($value, $substitute = '-', $return = null)
 {
-    return StringHelpers::zero_replace($value, $substitute, $return);
+    return StringHelpers::zeroReplace($value, $substitute, $return);
 }
 
 /**
