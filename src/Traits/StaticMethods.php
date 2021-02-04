@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Strings\Traits;
-
 
 trait StaticMethods
 {
