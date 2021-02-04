@@ -77,3 +77,7 @@ All notable changes to `string-helpers` will be documented in this file
 - add functionality to StaticMethods so that they can be accessed with StringHelpers
 - refactor StaticHelpersTest to use StringHelpers import
 - refactor zero_replace static method to zeroReplace
+
+
+## 1.1.1 - 2021-02-04
+- fix min phpunit/phpunit version
