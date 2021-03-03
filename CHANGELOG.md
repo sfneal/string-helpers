@@ -81,3 +81,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 1.1.1 - 2021-02-04
 - fix min phpunit/phpunit version
+
+
+## 1.1.2 - 2021-03-03
+- add `extractEmailDomain()` method for extracting domains from email addresses
