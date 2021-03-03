@@ -41,6 +41,16 @@ class StaticHelpersTest extends TestCase
     }
 
     /** @test */
+    public function extractEmailDomain()
+    {
+        $url = 'user@example.com';
+        $expected = 'example.com';
+        $output = StringHelpers::extractEmailDomain($url);
+        $this->assertIsString($output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
     public function zero_replace()
     {
         $this->assertEquals('-', StringHelpers::zeroReplace(0));

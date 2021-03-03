@@ -45,7 +45,18 @@ trait StaticMethods
      */
     public static function extractWebsiteDomain(string $url): string
     {
-        return isset($url) ? str_replace('www.', '', parse_url($url)['host']) : '';
+        return str_replace('www.', '', parse_url($url)['host']);
+    }
+
+    /**
+     * Retrieve a website domain from an email address.
+     *
+     * @param string $email
+     * @return string
+     */
+    public static function extractEmailDomain(string $email): string
+    {
+        return array_reverse(explode('@', $email))[0];
     }
 
     /**

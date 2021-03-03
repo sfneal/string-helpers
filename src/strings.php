@@ -217,6 +217,17 @@ function extractWebsiteDomain(string $url): string
 }
 
 /**
+ * Retrieve a website domain from an email address.
+ *
+ * @param string $email
+ * @return string
+ */
+function extractEmailDomain(string $email): string
+{
+    return StringHelpers::extractEmailDomain($email);
+}
+
+/**
  * Only retrieve an integer value if the $value is greater than zero.
  *
  * Uses $return as the $return value instead of $value if not null.
