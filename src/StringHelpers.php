@@ -296,6 +296,6 @@ class StringHelpers
      */
     public function fill(int $length, string $filler = ' '): string
     {
-        return $this->string . str_repeat($filler, $length - strlen($this->string));
+        return $this->string.str_repeat($filler, $length - strlen($this->string));
     }
 }
