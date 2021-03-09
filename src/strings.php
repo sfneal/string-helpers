@@ -183,6 +183,19 @@ function whitespaceReplace(string $string, string $replacement = ''): string
 }
 
 /**
+ * Fill a string with whitespace in order to make it a certain length in chars.
+ *
+ * @param string $string
+ * @param int $length length of the string in characters
+ * @param string $filler string to use to fill the needed whitespace
+ * @return string
+ */
+function fill(string $string, int $length, string $filler = ' '): string
+{
+    return (new StringHelpers($string))->fill($length, $filler);
+}
+
+/**
  * Implode values that are not null.
  *
  * @param $glue

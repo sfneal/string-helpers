@@ -170,4 +170,26 @@ class StringHelpersTest extends TestCase
         // Confirm string is as expected
         $this->assertTrue($noWhitespace == 'here-is-a-string-with-whitespace');
     }
+
+    /** @test  */
+    public function fill()
+    {
+        // String to fill
+        $string = 'key';
+
+        // Length of the filled string
+        $length = 10;
+
+        // Character used to fill whitespace
+        $filler = ' ';
+
+        // Fill the string with whitespace
+        $filled = (new StringHelpers($string))->fill($length, $filler);
+
+        // Confirm string length is correct
+        $this->assertEquals($length, strlen($filled));
+
+        // Confirm correct number of $filler chars
+        $this->assertEquals($length - strlen($string), substr_count($filled, $filler));
+    }
 }

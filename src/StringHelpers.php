@@ -286,4 +286,16 @@ class StringHelpers
     {
         return str_replace(' ', $replacement, $this->string);
     }
+
+    /**
+     * Fill a string with whitespace in order to make it a certain length in chars.
+     *
+     * @param int $length length of the string in characters
+     * @param string $filler string to use to fill the needed whitespace
+     * @return string
+     */
+    public function fill(int $length, string $filler = ' '): string
+    {
+        return $this->string . str_repeat($filler, $length - strlen($this->string));
+    }
 }
