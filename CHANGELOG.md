@@ -85,3 +85,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 1.1.2 - 2021-03-03
 - add `extractEmailDomain()` method for extracting domains from email addresses
+
+
+## 1.1.3 - 2021-03-09
+- add `StringHelpers::fill()` method for filling a string with whitespace to make it a particular length
