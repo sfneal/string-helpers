@@ -6,8 +6,8 @@ cache:
 
 env:
     matrix:
-        - COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS=""
-        - COMPOSER_FLAGS="" COMPOSER_SELF_UPDATE_FLAGS=""
+        - COMPOSER_FLAGS="--prefer-lowest"
+        - COMPOSER_FLAGS=""
 
 jobs:
     allow_failures:
@@ -24,11 +24,11 @@ php:
 before_script:
     - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - phpenv config-rm xdebug.ini
-    - travis_retry composer self-update ${COMPOSER_SELF_UPDATE_FLAGS}
+    - travis_retry composer self-update
     - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
 
 script:
     - composer test
 
 after_script:
-    - php vendor/bin/ocular code-coverage:upload --format=php-clover phpunit.xml.dist
+    - composer upload-coverage
