@@ -7,6 +7,8 @@ use Sfneal\Helpers\Strings\StringHelpers;
 
 class StringHelpersTest extends TestCase
 {
+    // todo: improve test assertions
+
     /** @test */
     public function sanitizeFileName()
     {
