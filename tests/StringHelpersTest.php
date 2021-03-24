@@ -14,8 +14,8 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers('random.string.name'))->sanitizeFileName();
 
-        $this->assertTrue(! inString($string, '.'));
-        $this->assertTrue(inString($string, '_'));
+        $this->assertStringNotContainsString('.', $string);
+        $this->assertStringContainsString('_', $string);
     }
 
     /** @test */
@@ -23,15 +23,17 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers(randomPassword(20)))->truncate(10, '');
 
-        $this->assertTrue(strlen($string) == 10);
+        $this->assertEquals(10, strlen($string));
     }
 
     /** @test */
     public function camelCaseConvert()
     {
+        $expected = 'camel-case-string';
         $string = (new StringHelpers('camelCaseString'))->camelCaseConvert();
 
-        $this->assertTrue(inString($string, '-'));
+        $this->assertStringContainsString('-', $string);
+        $this->assertEquals($expected, $string);
     }
 
     /** @test */
@@ -49,8 +51,8 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers('illegal id & string'))->id();
 
-        $this->assertTrue(! inString($string, '&'));
-        $this->assertTrue(! inString($string, ' '));
+        $this->assertStringNotContainsString('&', $string);
+        $this->assertStringNotContainsString(' ', $string);
     }
 
     /** @test */
@@ -58,8 +60,8 @@ class StringHelpersTest extends TestCase
     {
         $string = (new StringHelpers('illegal-id & string'))->strip();
 
-        $this->assertTrue(! inString($string, '&'));
-        $this->assertTrue(! inString($string, ' '));
+        $this->assertStringNotContainsString('&', $string);
+        $this->assertStringNotContainsString(' ', $string);
     }
 
     /** @test */
@@ -88,7 +90,7 @@ class StringHelpersTest extends TestCase
         $listString = (new StringHelpers('tom, dick, harry'))->isListString();
 
         $this->assertTrue(is_array($listString));
-        $this->assertTrue(count($listString) == 3);
+        $this->assertCount(3, $listString);
     }
 
     /** @test */
@@ -113,7 +115,7 @@ class StringHelpersTest extends TestCase
         $paddedString = (new StringHelpers($string))->whitespacePad($amount);
 
         // Confirm string has been padded
-        $this->assertTrue(strlen($string) + $amount * 2 == strlen($paddedString));
+        $this->assertEquals(strlen($paddedString), strlen($string) + $amount * 2);
     }
 
     /** @test */
@@ -129,7 +131,7 @@ class StringHelpersTest extends TestCase
         $paddedString = (new StringHelpers($string))->whitespacePadBack($amount);
 
         // Confirm string has been padded
-        $this->assertTrue(strlen($string) + $amount == strlen($paddedString));
+        $this->assertEquals(strlen($paddedString), strlen($string) + $amount);
     }
 
     /** @test */
@@ -145,7 +147,7 @@ class StringHelpersTest extends TestCase
         $paddedString = (new StringHelpers($string))->whitespacePadFront($amount);
 
         // Confirm string has been padded
-        $this->assertTrue(strlen($string) + $amount == strlen($paddedString));
+        $this->assertEquals(strlen($paddedString), strlen($string) + $amount);
     }
 
     /** @test  */
@@ -158,10 +160,10 @@ class StringHelpersTest extends TestCase
         $noWhitespace = (new StringHelpers($string))->whitespaceRemove();
 
         // Confirm whitespace is removed
-        $this->assertTrue(! inString($noWhitespace, ' '));
+        $this->assertStringNotContainsString(' ', $noWhitespace);
 
         // Confirm string is as expected
-        $this->assertTrue($noWhitespace == 'hereisastringwithwhitespace');
+        $this->assertEquals('hereisastringwithwhitespace', $noWhitespace);
     }
 
     /** @test  */
@@ -177,10 +179,10 @@ class StringHelpersTest extends TestCase
         $noWhitespace = (new StringHelpers($string))->whitespaceReplace($replacementChar);
 
         // Confirm whitespace is removed
-        $this->assertTrue(inString($noWhitespace, '-'));
+        $this->assertStringContainsString('-', $noWhitespace);
 
         // Confirm string is as expected
-        $this->assertTrue($noWhitespace == 'here-is-a-string-with-whitespace');
+        $this->assertEquals('here-is-a-string-with-whitespace', $noWhitespace);
     }
 
     /** @test  */

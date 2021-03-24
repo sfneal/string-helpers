@@ -11,6 +11,7 @@ class RandomPasswordTest extends TestCase
     {
         $string = randomPassword();
 
+        $this->assertIsString($string);
         $this->assertTrue(strlen($string) == 8);
     }
 }
