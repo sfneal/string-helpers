@@ -58,6 +58,16 @@ class StringHelpers
     }
 
     /**
+     * Explode a string using upper case chars as the separator.
+     *
+     * @return array
+     */
+    public function camelCaseSplit(): array
+    {
+        return preg_split('/(?=[A-Z])/', $this->string, -1, PREG_SPLIT_NO_EMPTY);
+    }
+
+    /**
      * Remove illegal characters from a string to create an ID.
      *
      *  - legal chars: '&', ' '

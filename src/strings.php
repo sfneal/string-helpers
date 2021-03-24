@@ -39,6 +39,17 @@ function camelCaseConverter(string $string, $char = '-'): string
 }
 
 /**
+ * Explode a string using upper case chars as the separator.
+ *
+ * @param string $string
+ * @return array
+ */
+function camelCaseSplit(string $string): array
+{
+    return (new StringHelpers($string))->camelCaseSplit();
+}
+
+/**
  * Remove illegal characters from a string to create an ID.
  *
  * @param $string

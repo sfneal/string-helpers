@@ -35,6 +35,16 @@ class StringHelpersTest extends TestCase
     }
 
     /** @test */
+    public function camelCaseSplit()
+    {
+        $expected = ['Camel', 'Case', 'String'];
+        $array = (new StringHelpers('CamelCaseString'))->camelCaseSplit();
+
+        $this->assertIsArray($array);
+        $this->assertEquals($expected, $array);
+    }
+
+    /** @test */
     public function id()
     {
         $string = (new StringHelpers('illegal id & string'))->id();
