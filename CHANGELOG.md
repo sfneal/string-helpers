@@ -89,3 +89,7 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 1.1.3 - 2021-03-09
 - add `StringHelpers::fill()` method for filling a string with whitespace to make it a particular length
+
+
+## 1.1.4 - 2021-03-24
+- add `StringHelpers::camelCaseSplit()` method to StringHelpers for splitting a camel cased string
