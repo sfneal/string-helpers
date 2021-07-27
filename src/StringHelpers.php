@@ -4,6 +4,7 @@ namespace Sfneal\Helpers\Strings;
 
 use Sfneal\Helpers\Arrays\ArrayHelpers;
 use Sfneal\Helpers\Strings\Traits\StaticMethods;
+use Sfneal\Helpers\Strings\Utils\Regex;
 
 class StringHelpers
 {
@@ -108,11 +109,12 @@ class StringHelpers
     /**
      * Remove duplicate characters from a string
      *
+     * @param string $pattern
      * @return string
      */
-    public function removeDuplicateChars(): string
+    public function removeDuplicateChars(string $pattern = Regex::NOT_NUMBERS_OR_LETTERS_OR_UNDERSCORE): string
     {
-        return preg_replace("/(\W)\\1+/", "$1", $this->string);
+        return preg_replace("/({$pattern})\\1+/", "$1", $this->string);
     }
 
     /**
