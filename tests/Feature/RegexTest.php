@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Strings\Tests\Feature;
-
 
 use Sfneal\Helpers\Strings\Tests\TestCase;
 use Sfneal\Helpers\Strings\Utils\Regex;
