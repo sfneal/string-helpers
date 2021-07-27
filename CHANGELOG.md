@@ -93,3 +93,12 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 1.1.4 - 2021-03-24
 - add `StringHelpers::camelCaseSplit()` method to StringHelpers for splitting a camel cased string
+
+
+## 1.2.0 - 2021-07-27
+- refactor test classes to 'tests/Units' & 'tests/Feature' directories
+- add orchestra/testbench to composer dev requirements
+- add test assertions to `StringHelpersTest` methods
+- fix issues with `StringHelpersTest` `id()` & `strip()` assertions
+- make `Regex` for retrieving regular expression patterns
+- add use of `Regex::NOT_NUMBERS_OR_LETTERS_OR_UNDERSCORE` in `StringHelpers::removeDuplicateChars()`
