@@ -52,19 +52,23 @@ class StringHelpersTest extends TestCase
     /** @test */
     public function id()
     {
+        $expected = 'illegal-id-string';
         $string = (new StringHelpers('illegal id & string'))->id();
 
         $this->assertStringNotContainsString('&', $string);
         $this->assertStringNotContainsString(' ', $string);
+        $this->assertSame($expected, $string);
     }
 
     /** @test */
     public function strip()
     {
+        $expected = 'illegal-id-string';
         $string = (new StringHelpers('illegal-id & string'))->strip();
 
         $this->assertStringNotContainsString('&', $string);
         $this->assertStringNotContainsString(' ', $string);
+        $this->assertSame($expected, $string);
     }
 
     /** @test */
