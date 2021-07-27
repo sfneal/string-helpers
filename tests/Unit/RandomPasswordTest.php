@@ -2,7 +2,7 @@
 
 namespace Sfneal\Helpers\Strings\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Sfneal\Helpers\Strings\Tests\TestCase;
 
 class RandomPasswordTest extends TestCase
 {

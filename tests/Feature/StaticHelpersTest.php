@@ -2,8 +2,8 @@
 
 namespace Sfneal\Helpers\Strings\Tests\Feature;
 
-use PHPUnit\Framework\TestCase;
 use Sfneal\Helpers\Strings\StringHelpers;
+use Sfneal\Helpers\Strings\Tests\TestCase;
 
 class StaticHelpersTest extends TestCase
 {
