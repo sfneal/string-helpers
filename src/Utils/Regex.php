@@ -2,6 +2,10 @@
 
 namespace Sfneal\Helpers\Strings\Utils;
 
+/**
+ * Class Regex.
+ * @see https://stackoverflow.com/questions/2991901/regular-expression-any-character-that-is-not-a-letter-or-number?rq=1
+ */
 class Regex
 {
     /**
