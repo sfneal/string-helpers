@@ -12,10 +12,12 @@ class StringHelpersTest extends TestCase
     /** @test */
     public function sanitizeFileName()
     {
+        $expected = 'random_string_name';
         $string = (new StringHelpers('random.string.name'))->sanitizeFileName();
 
         $this->assertStringNotContainsString('.', $string);
         $this->assertStringContainsString('_', $string);
+        $this->assertSame($expected, $string);
     }
 
     /** @test */
@@ -34,6 +36,7 @@ class StringHelpersTest extends TestCase
 
         $this->assertStringContainsString('-', $string);
         $this->assertEquals($expected, $string);
+        $this->assertSame($expected, $string);
     }
 
     /** @test */
