@@ -102,3 +102,7 @@ All notable changes to `string-helpers` will be documented in this file
 - fix issues with `StringHelpersTest` `id()` & `strip()` assertions
 - make `Regex` for retrieving regular expression patterns
 - add use of `Regex::NOT_NUMBERS_OR_LETTERS_OR_UNDERSCORE` in `StringHelpers::removeDuplicateChars()`
+
+
+## 1.2.1 - 2021-07-30
+- fix sfneal/array-helpers dependency to be more explicit
