@@ -108,5 +108,5 @@ All notable changes to `string-helpers` will be documented in this file
 - fix sfneal/array-helpers dependency to be more explicit
 
  
-## 1.3.0 - 2021-08-03
+## 1.2.2 - 2021-08-03
 - bump min sfneal/array-helpers version to v2.0 & refactor use
