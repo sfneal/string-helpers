@@ -147,7 +147,7 @@ class StringHelpers
 
             // All needles must be found
             else {
-                return (new ArrayHelpers($results))->arrayValuesEqual(true);
+                return (new ArrayHelpers($results))->valuesEqual(true);
             }
         }
 
