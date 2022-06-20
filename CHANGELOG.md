@@ -114,3 +114,8 @@ All notable changes to `string-helpers` will be documented in this file
 
 ## 1.2.3 - 2021-08-04
 - bump min sfneal/array-helpers version to v3.0 & refactor use
+
+
+## 1.2.4 - 2022-11-20
+- add use of GitHub actions for composer installations & PHPunit tests
+- add `StringHelpers::from()` static constructor method for improved syntax

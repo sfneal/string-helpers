@@ -21,6 +21,17 @@ class StringHelpersTest extends TestCase
     }
 
     /** @test */
+    public function sanitizeFileNameWithStaticConstructor()
+    {
+        $expected = 'random_string_name';
+        $string = StringHelpers::from('random.string.name')->sanitizeFileName();
+
+        $this->assertStringNotContainsString('.', $string);
+        $this->assertStringContainsString('_', $string);
+        $this->assertSame($expected, $string);
+    }
+
+    /** @test */
     public function truncate()
     {
         $string = (new StringHelpers(randomPassword(20)))->truncate(10, '');
