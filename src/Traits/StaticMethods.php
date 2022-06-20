@@ -8,7 +8,7 @@ trait StaticMethods
      * Implode values that are not null.
      *
      * @param $glue
-     * @param array $pieces
+     * @param  array  $pieces
      * @return string|null
      */
     public static function implodeFiltered($glue, array $pieces): ?string
@@ -25,7 +25,7 @@ trait StaticMethods
     /**
      * Concatenate directory and file path arrays.
      *
-     * @param mixed ...$paths
+     * @param  mixed  ...$paths
      * @return string
      */
     public static function joinPaths(...$paths): string
@@ -40,7 +40,7 @@ trait StaticMethods
     /**
      * Retrieve a website domain without prefixes.
      *
-     * @param string $url
+     * @param  string  $url
      * @return string
      */
     public static function extractWebsiteDomain(string $url): string
@@ -51,7 +51,7 @@ trait StaticMethods
     /**
      * Retrieve a website domain from an email address.
      *
-     * @param string $email
+     * @param  string  $email
      * @return string
      */
     public static function extractEmailDomain(string $email): string
@@ -67,8 +67,8 @@ trait StaticMethods
      * Return $substitute string if it is less.
      *
      * @param $value
-     * @param string $substitute
-     * @param mixed $return
+     * @param  string  $substitute
+     * @param  mixed  $return
      * @return mixed
      */
     public static function zeroReplace($value, $substitute = '-', $return = null)
@@ -84,9 +84,9 @@ trait StaticMethods
      *  - implodePretty([1, 2, 3]) --> '1, 2 & 3'
      *  - implodePretty([A, B, D]) --> 'A, B & D'
      *
-     * @param array $pieces
-     * @param string $glue
-     * @param string $and
+     * @param  array  $pieces
+     * @param  string  $glue
+     * @param  string  $and
      * @return string
      */
     public static function implodePretty(array $pieces, string $glue = ',', string $and = '&'): ?string

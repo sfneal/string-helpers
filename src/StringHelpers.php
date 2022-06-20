@@ -18,7 +18,7 @@ class StringHelpers
     /**
      * StringHelpers constructor.
      *
-     * @param string $string
+     * @param  string  $string
      */
     public function __construct(string $string)
     {
@@ -38,8 +38,8 @@ class StringHelpers
     /**
      * Truncate a string to be no longer than $chars.
      *
-     * @param int $chars
-     * @param string $suffix
+     * @param  int  $chars
+     * @param  string  $suffix
      * @return string
      */
     public function truncate(int $chars = 100, string $suffix = '...'): string
@@ -50,7 +50,7 @@ class StringHelpers
     /**
      * Covert a camel cased string into a $char separated string.
      *
-     * @param string $char
+     * @param  string  $char
      * @return string
      */
     public function camelCaseConvert(string $char = '-'): string
@@ -109,7 +109,7 @@ class StringHelpers
     /**
      * Remove duplicate characters from a string.
      *
-     * @param string $pattern
+     * @param  string  $pattern
      * @return string
      */
     public function removeDuplicateChars(string $pattern = Regex::NOT_NUMBERS_OR_LETTERS_OR_UNDERSCORE): string
@@ -125,8 +125,8 @@ class StringHelpers
      *
      *  todo: rename given $needle can be an array
      *
-     * @param string|array $needle
-     * @param string $boolean
+     * @param  string|array  $needle
+     * @param  string  $boolean
      * @return bool
      */
     public function inString($needle, string $boolean = 'and'): bool
@@ -173,7 +173,7 @@ class StringHelpers
      *
      *  todo: refactor to listString?
      *
-     * @param array|string[] $separators
+     * @param  array|string[]  $separators
      * @return bool|false|string[]
      */
     public function isListString(array $separators = [', ', ' '])
@@ -196,8 +196,8 @@ class StringHelpers
     /**
      * Explode a string using an array of delimiters instead of a single string.
      *
-     * @param array|string[] $delimiters
-     * @param string $replacer
+     * @param  array|string[]  $delimiters
+     * @param  string  $replacer
      * @return array
      */
     public function explodeMany(array $delimiters = [',', '&', '/', '-'], string $replacer = '***'): array
@@ -248,10 +248,10 @@ class StringHelpers
     /**
      * Add whitespace padding to a string.
      *
-     * @param int $amount
-     * @param string $pad
-     * @param bool $front add whitespace to 'front' of the string
-     * @param bool $back add whitespace to the 'back' of the string
+     * @param  int  $amount
+     * @param  string  $pad
+     * @param  bool  $front  add whitespace to 'front' of the string
+     * @param  bool  $back  add whitespace to the 'back' of the string
      * @return string
      */
     public function whitespacePad(int $amount = 1,
@@ -269,8 +269,8 @@ class StringHelpers
     /**
      * Add whitespace padding to only the 'back' of the string.
      *
-     * @param int $amount
-     * @param string $pad
+     * @param  int  $amount
+     * @param  string  $pad
      * @return string
      */
     public function whitespacePadBack(int $amount = 1, string $pad = ' '): string
@@ -281,8 +281,8 @@ class StringHelpers
     /**
      * Add whitespace padding to only the 'back' of the string.
      *
-     * @param int $amount
-     * @param string $pad
+     * @param  int  $amount
+     * @param  string  $pad
      * @return string
      */
     public function whitespacePadFront(int $amount = 1, string $pad = ' '): string
@@ -303,7 +303,7 @@ class StringHelpers
     /**
      * Remove all whitespace (spaces) from a string & replace with another string.
      *
-     * @param string $replacement defaults to ''
+     * @param  string  $replacement  defaults to ''
      * @return string
      */
     public function whitespaceReplace(string $replacement = ''): string
@@ -314,8 +314,8 @@ class StringHelpers
     /**
      * Fill a string with whitespace in order to make it a certain length in chars.
      *
-     * @param int $length length of the string in characters
-     * @param string $filler string to use to fill the needed whitespace
+     * @param  int  $length  length of the string in characters
+     * @param  string  $filler  string to use to fill the needed whitespace
      * @return string
      */
     public function fill(int $length, string $filler = ' '): string
