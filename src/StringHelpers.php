@@ -25,6 +25,11 @@ class StringHelpers
         $this->string = $string;
     }
 
+    public static function from(string $string): self
+    {
+        return new self($string);
+    }
+
     /**
      * Sanitize a file name to remove illegal chars.
      *
