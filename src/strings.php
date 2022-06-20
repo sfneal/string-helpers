@@ -5,7 +5,7 @@ use Sfneal\Helpers\Strings\StringHelpers;
 /**
  * Sanitize a file name to remove illegal chars.
  *
- * @param string $raw
+ * @param  string  $raw
  * @return string
  */
 function sanitizeFileName(string $raw): string
@@ -16,9 +16,9 @@ function sanitizeFileName(string $raw): string
 /**
  * Truncate a string to be no longer than $chars.
  *
- * @param string $string
- * @param int $chars
- * @param string $suffix
+ * @param  string  $string
+ * @param  int  $chars
+ * @param  string  $suffix
  * @return string
  */
 function truncateString(string $string, int $chars = 100, string $suffix = '...'): string
@@ -29,8 +29,8 @@ function truncateString(string $string, int $chars = 100, string $suffix = '...'
 /**
  * Covert a camel cased string into a $char separated string.
  *
- * @param string $string
- * @param string $char
+ * @param  string  $string
+ * @param  string  $char
  * @return string
  */
 function camelCaseConverter(string $string, $char = '-'): string
@@ -41,7 +41,7 @@ function camelCaseConverter(string $string, $char = '-'): string
 /**
  * Explode a string using upper case chars as the separator.
  *
- * @param string $string
+ * @param  string  $string
  * @return array
  */
 function camelCaseSplit(string $string): array
@@ -85,9 +85,9 @@ function stringID($string): string
 /**
  * Check if a needle string is in a haystack string.
  *
- * @param string $haystack
- * @param string|array $needle
- * @param string $boolean
+ * @param  string  $haystack
+ * @param  string|array  $needle
+ * @param  string  $boolean
  * @return bool
  */
 function inString(string $haystack, $needle, string $boolean = 'and'): bool
@@ -101,8 +101,8 @@ function inString(string $haystack, $needle, string $boolean = 'and'): bool
  *  - if $string is a list, an array of values is returned
  *  - if $sting is a string, false is returned
  *
- * @param string $string
- * @param array|string[] $separators
+ * @param  string  $string
+ * @param  array|string[]  $separators
  * @return bool|false|string[]
  */
 function isListString(string $string, array $separators = [', ', ' '])
@@ -113,9 +113,9 @@ function isListString(string $string, array $separators = [', ', ' '])
 /**
  * Explode a string using an array of delimiters instead of a single string.
  *
- * @param string $string
- * @param array|string[] $delimiters
- * @param string $replacer
+ * @param  string  $string
+ * @param  array|string[]  $delimiters
+ * @param  string  $replacer
  * @return array
  */
 function explodeMany(string $string,
@@ -128,11 +128,11 @@ function explodeMany(string $string,
 /**
  * Add whitespace padding to a string.
  *
- * @param string $string
- * @param int $amount
- * @param string $pad
- * @param bool $front add whitespace to 'front' of the string
- * @param bool $back add whitespace to the 'back' of the string
+ * @param  string  $string
+ * @param  int  $amount
+ * @param  string  $pad
+ * @param  bool  $front  add whitespace to 'front' of the string
+ * @param  bool  $back  add whitespace to the 'back' of the string
  * @return string
  */
 function whitespacePad(string $string,
@@ -147,9 +147,9 @@ function whitespacePad(string $string,
 /**
  * Add whitespace padding to only the 'back' of the string.
  *
- * @param string $string
- * @param int $amount
- * @param string $pad
+ * @param  string  $string
+ * @param  int  $amount
+ * @param  string  $pad
  * @return string
  */
 function whitespacePadBack(string $string, int $amount = 1, string $pad = ' '): string
@@ -160,9 +160,9 @@ function whitespacePadBack(string $string, int $amount = 1, string $pad = ' '): 
 /**
  * Add whitespace padding to only the 'back' of the string.
  *
- * @param string $string
- * @param int $amount
- * @param string $pad
+ * @param  string  $string
+ * @param  int  $amount
+ * @param  string  $pad
  * @return string
  */
 function whitespacePadFront(string $string, int $amount = 1, string $pad = ' '): string
@@ -173,7 +173,7 @@ function whitespacePadFront(string $string, int $amount = 1, string $pad = ' '):
 /**
  * Remove all whitespace (spaces) from a string.
  *
- * @param string $string
+ * @param  string  $string
  * @return string
  */
 function whitespaceRemove(string $string): string
@@ -184,8 +184,8 @@ function whitespaceRemove(string $string): string
 /**
  * Remove all whitespace (spaces) from a string & replace with another string.
  *
- * @param string $string
- * @param string $replacement defaults to ''
+ * @param  string  $string
+ * @param  string  $replacement  defaults to ''
  * @return string
  */
 function whitespaceReplace(string $string, string $replacement = ''): string
@@ -196,9 +196,9 @@ function whitespaceReplace(string $string, string $replacement = ''): string
 /**
  * Fill a string with whitespace in order to make it a certain length in chars.
  *
- * @param string $string
- * @param int $length length of the string in characters
- * @param string $filler string to use to fill the needed whitespace
+ * @param  string  $string
+ * @param  int  $length  length of the string in characters
+ * @param  string  $filler  string to use to fill the needed whitespace
  * @return string
  */
 function fill(string $string, int $length, string $filler = ' '): string
@@ -210,7 +210,7 @@ function fill(string $string, int $length, string $filler = ' '): string
  * Implode values that are not null.
  *
  * @param $glue
- * @param array $pieces
+ * @param  array  $pieces
  * @return string|null
  */
 function implodeFiltered($glue, array $pieces): ?string
@@ -221,7 +221,7 @@ function implodeFiltered($glue, array $pieces): ?string
 /**
  * Concatenate directory and file path arrays.
  *
- * @param mixed ...$paths
+ * @param  mixed  ...$paths
  * @return string
  */
 function joinPaths(...$paths): string
@@ -232,7 +232,7 @@ function joinPaths(...$paths): string
 /**
  * Retrieve a website domain without prefixes.
  *
- * @param string $url
+ * @param  string  $url
  * @return string
  */
 function extractWebsiteDomain(string $url): string
@@ -243,7 +243,7 @@ function extractWebsiteDomain(string $url): string
 /**
  * Retrieve a website domain from an email address.
  *
- * @param string $email
+ * @param  string  $email
  * @return string
  */
 function extractEmailDomain(string $email): string
@@ -259,8 +259,8 @@ function extractEmailDomain(string $email): string
  * Return $substitute string if it is less.
  *
  * @param $value
- * @param string $substitute
- * @param mixed $return
+ * @param  string  $substitute
+ * @param  mixed  $return
  * @return mixed
  */
 function zero_replace($value, $substitute = '-', $return = null)
@@ -275,9 +275,9 @@ function zero_replace($value, $substitute = '-', $return = null)
  *  - implodePretty([1, 2, 3]) --> '1, 2 & 3'
  *  - implodePretty([A, B, D]) --> 'A, B & D'
  *
- * @param array $pieces
- * @param string $glue
- * @param string $and
+ * @param  array  $pieces
+ * @param  string  $glue
+ * @param  string  $and
  * @return string
  */
 function implodePretty(array $pieces, string $glue = ',', string $and = '&'): ?string
@@ -288,9 +288,9 @@ function implodePretty(array $pieces, string $glue = ',', string $and = '&'): ?s
 /**
  * Generate a random password using uniqueid & md5 functions.
  *
- * @param int $length
- * @param string $prefix
- * @param string $hashFunction
+ * @param  int  $length
+ * @param  string  $prefix
+ * @param  string  $hashFunction
  * @return string
  */
 function randomPassword(int $length = 8, string $prefix = '', string $hashFunction = 'md5'): string
