@@ -1,0 +1,33 @@
+name: Composer
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-latest]
+                php: [7.1, 7.2, 7.3, 7.4, 8.0, 8.1]
+                dependency-version: [prefer-lowest, prefer-stable]
+                dev-dependencies: [dev, no-dev]
+
+        name: Composer | PHP ${{ matrix.php }} - ${{ matrix.dependency-version }} - ${{ matrix.dev-dependencies }}
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v1
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    coverage: none
+
+            -   name: Install Composer Dependencies
+                run: |
+                    composer update --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+

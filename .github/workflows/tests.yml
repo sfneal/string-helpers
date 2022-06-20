@@ -1,0 +1,36 @@
+name: Test Suite
+
+on:
+    push:
+    pull_request:
+    release:
+        types: [published]
+
+jobs:
+    test:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-latest]
+                php: [7.1, 7.2, 7.3, 7.4, 8.0, 8.1]
+                dependency-version: [prefer-lowest, prefer-stable]
+
+        name: Tests | PHP ${{ matrix.php }} - ${{ matrix.dependency-version }}
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v1
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    coverage: none
+
+            -   name: Install Composer Dependencies
+                run: |
+                    composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+
+            -   name: Execute tests
+                run: composer test
